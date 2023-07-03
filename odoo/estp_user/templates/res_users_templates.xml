@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <template id="user_card_template" inherit_id="base.user_card">
+            <xpath expr="//div[@class='o_kanban_details']" position="inside">
+                <div class="o_kanban_details">
+                    <t t-if="record.password">
+                        <div class="o_kanban_field">
+                            <span class="o_field_label">Password:</span>
+                            <span class="o_field_value"></span>
+                        </div>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

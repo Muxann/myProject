@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_restrict_email_login" model="res.groups">
+        <field name="name">Restrict Email Login</field>
+    </record>
+
+    <record id="group_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_restrict_email_login'))]"/>
+    </record>
+
+    <record id="field_user_login" model="ir.model.fields">
+        <field name="name">login</field>
+        <field name="model_id" ref="model_res_users"/>
+        <field name="groups" eval="[(6, 0, [ref('group_restrict_email_login')])]"/>
+        <field name="required">1</field>
+    </record>
+</odoo>
